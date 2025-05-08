@@ -353,7 +353,8 @@ export default function Home() {
           <h2 className="heading-lg mb-6">Ready to Transform Your Look?</h2>
           <p className="body-lg mb-8 max-w-2xl mx-auto text-salon-100">
             Book your appointment today and experience the Elegance difference.
-            Our team is ready to help you achieve the look you've always wanted.
+            Our team is ready to help you achieve the look you&apos;ve always
+            wanted.
           </p>
           <Button
             asChild
