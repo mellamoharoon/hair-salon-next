@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Scissors className="h-5 w-5 text-gold-400" />
-              <span className="text-xl font-serif font-medium">Neel David</span>
+              <span className="text-xl font-serif font-medium">Neel David's</span>
             </div>
             <p className="text-salon-200 mb-6">
               Premium hair salon offering cutting-edge styles, expert coloring, and luxurious treatments in an elegant atmosphere.
@@ -116,7 +116,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-salon-700/50 text-salon-300 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
-          <div>© {currentYear} Neel David Hair Salon. All rights reserved.</div>
+          <div>© {currentYear} Neel David's Hair Salon. All rights reserved.</div>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy

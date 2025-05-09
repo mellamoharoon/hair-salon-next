@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Neel David Kishangang | Premium Hair Salon',
+  title: "Neel David's Kishangang | Premium Hair Salon",
   description: 'Experience luxury hair styling, coloring, and treatments at Neel David Kishangang Hair Salon.',
 };
 

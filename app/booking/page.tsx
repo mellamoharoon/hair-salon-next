@@ -31,6 +31,11 @@ import {
 } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import nitinImage from '@/assets/images/stylists/nitin.jpeg'
+import kavitaImage from '@/assets/images/stylists/kavita.jpeg'
+import shahrukhImage from '@/assets/images/stylists/shahrukh.jpeg'
+import deepanshuImage from '@/assets/images/stylists/deepanshu.jpeg'
+import Image from 'next/image'
 
 // Time slots available for booking
 const TIME_SLOTS = [
@@ -41,29 +46,30 @@ const TIME_SLOTS = [
   "5:00 PM", "5:30 PM", "6:00 PM"
 ]
 
+
 // Services offered by the salon
 const SERVICES = [
   {
     id: "haircuts",
     category: "Haircuts & Styling",
     options: [
-      { id: "womens-cut", name: "Women's Haircut & Style", price: "$65+" },
-      { id: "mens-cut", name: "Men's Haircut & Style", price: "$45+" },
-      { id: "kids-cut", name: "Children's Haircut", price: "$35+" },
-      { id: "bang-trim", name: "Bang Trim", price: "$20+" },
-      { id: "blowout", name: "Blowout Styling", price: "$55+" },
-      { id: "special-style", name: "Special Occasion Styling", price: "$85+" }
+      { id: "womens-cut", name: "Women's Haircut & Style", price: "₹65+" },
+      { id: "mens-cut", name: "Men's Haircut & Style", price: "₹45+" },
+      { id: "kids-cut", name: "Children's Haircut", price: "₹35+" },
+      { id: "bang-trim", name: "Bang Trim", price: "₹20+" },
+      { id: "blowout", name: "Blowout Styling", price: "₹55+" },
+      { id: "special-style", name: "Special Occasion Styling", price: "₹85+" }
     ]
   },
   {
     id: "coloring",
     category: "Hair Coloring",
     options: [
-      { id: "single-process", name: "Single Process Color", price: "$85+" },
-      { id: "partial-highlights", name: "Partial Highlights", price: "$120+" },
-      { id: "full-highlights", name: "Full Highlights", price: "$160+" },
-      { id: "balayage", name: "Balayage", price: "$175+" },
-      { id: "ombre", name: "Ombré", price: "$185+" },
+      { id: "single-process", name: "Single Process Color", price: "₹85+" },
+      { id: "partial-highlights", name: "Partial Highlights", price: "₹120+" },
+      { id: "full-highlights", name: "Full Highlights", price: "₹160+" },
+      { id: "balayage", name: "Balayage", price: "₹175+" },
+      { id: "ombre", name: "Ombré", price: "₹185+" },
       { id: "color-correction", name: "Color Correction", price: "Consultation" }
     ]
   },
@@ -71,12 +77,12 @@ const SERVICES = [
     id: "treatments",
     category: "Treatments & Masks",
     options: [
-      { id: "deep-conditioning", name: "Deep Conditioning Treatment", price: "$45+" },
-      { id: "keratin", name: "Keratin Smoothing Treatment", price: "$250+" },
-      { id: "scalp-treatment", name: "Scalp Treatment", price: "$55+" },
-      { id: "protein-mask", name: "Protein Mask", price: "$60+" },
-      { id: "olaplex", name: "Olaplex Treatment", price: "$75+" },
-      { id: "glossing", name: "Hair Glossing", price: "$65+" }
+      { id: "deep-conditioning", name: "Deep Conditioning Treatment", price: "₹45+" },
+      { id: "keratin", name: "Keratin Smoothing Treatment", price: "₹250+" },
+      { id: "scalp-treatment", name: "Scalp Treatment", price: "₹55+" },
+      { id: "protein-mask", name: "Protein Mask", price: "₹60+" },
+      { id: "olaplex", name: "Olaplex Treatment", price: "₹75+" },
+      { id: "glossing", name: "Hair Glossing", price: "₹65+" }
     ]
   }
 ]
@@ -84,32 +90,32 @@ const SERVICES = [
 // Stylists at the salon
 const STYLISTS = [
   {
-    id: "emma",
-    name: "Emma Wilson",
-    role: "Senior Stylist",
-    specialties: ["Precision Cuts", "Textured Styles", "Short Hair Designs"],
-    image: "https://images.pexels.com/photos/2681751/pexels-photo-2681751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    id: "nitin",
+    name: "Nitin",
+    role: "Master Hair Stylist",
+    specialties: ["Hair Treatments, Highlights, Colour correction"],
+    image: nitinImage
   },
   {
-    id: "james",
-    name: "James Rodriguez",
-    role: "Color Specialist",
-    specialties: ["Balayage", "Creative Color", "Color Correction"],
-    image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    id: "kavita",
+    name: "Kavita",
+    role: "Beauty treatments",
+    specialties: ["Skincare, Makeup"],
+    image: kavitaImage,
   },
   {
-    id: "sophia",
-    name: "Sophia Chen",
-    role: "Artistic Director",
-    specialties: ["Editorial Styling", "Avant-Garde Designs", "Bridal Hair"],
-    image: "https://images.pexels.com/photos/3785424/pexels-photo-3785424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    id: "shahrukh",
+    name: "Shahrukh",
+    role: "Senior Unisex Hair stylist",
+    specialties: ["Colour specialist, Balayage, Creative colour"],
+    image: shahrukhImage,
   },
   {
-    id: "marcus",
-    name: "Marcus Johnson",
-    role: "Master Stylist",
-    specialties: ["Men's Grooming", "Fades", "Texturizing"],
-    image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    id: "deepanshu",
+    name: "Deepanshu",
+    role: "Gents Hair dresser",
+    specialties: ["Marvellous Cut", "Short Hair Artist"],
+    image: deepanshuImage
   }
 ]
 
@@ -141,9 +147,23 @@ const formSchema = z.object({
   notes: z.string().optional(),
 })
 
+// Function to send WhatsApp message using Twilio API
+async function sendWhatsAppMessage(bookingData: string) {
+  try {
+    const encodedMessage = encodeURIComponent(bookingData);
+    const url = `https://wa.me/918826473660?text=${encodedMessage}`;
+    window.open(url, '_blank');
+  
+  } catch (error) {
+    console.error('Error sending WhatsApp message:', error);
+    throw error;
+  }
+}
+
 export default function BookingPage() {
   const [step, setStep] = useState(1)
   const [bookingComplete, setBookingComplete] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
   const router = useRouter()
 
@@ -175,24 +195,68 @@ export default function BookingPage() {
   }
 
   // Form submission handler
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real application, you would send this data to your backend
-    console.log(values)
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
     
-    // Show success message
-    setBookingComplete(true)
-    
-    // Show toast notification
-    toast({
-      title: "Booking Confirmed!",
-      description: "Your appointment has been scheduled successfully.",
-    })
-    
-    // In a real application, you might redirect to a confirmation page
-    // After a delay, redirect to home
-    setTimeout(() => {
-      router.push('/')
-    }, 5000)
+    try {
+      // Prepare booking data
+      const service = getSelectedService();
+      const stylist = getSelectedStylist();
+      const formattedDate = format(values.date, "EEEE, MMMM d, yyyy");
+      
+      const bookingData = `Hello!
+
+      I’d like to book an appointment at your hair salon. Here are my details:
+      
+      Name: ${values.firstName} ${values.lastName}
+      Phone: ${values.phone}
+      Email: ${values.email}
+      
+      Service: ${service?.name}
+      Category: ${service?.category}
+      
+      Stylist: ${stylist?.name}
+      
+      Date: ${formattedDate}
+      Time: ${values.time}
+      
+      Notes: ${values.notes || "None"}
+      
+      Thank you! I look forward to your confirmation.`;
+      
+
+      
+      // In a real application, you would send this data to your backend
+      console.log("Booking data:", bookingData);
+      
+      // Send WhatsApp message
+      await sendWhatsAppMessage(bookingData);
+      
+      // Show success message
+      setBookingComplete(true);
+      
+      // Show toast notification
+      toast({
+        title: "Booking Confirmed!",
+        description: "Your appointment has been scheduled and WhatsApp confirmation sent.",
+      });
+      
+      // In a real application, you might redirect to a confirmation page
+      // After a delay, redirect to home
+      setTimeout(() => {
+        router.push('/')
+      }, 5000)
+    } catch (error) {
+      console.error("Error during booking submission:", error);
+      
+      toast({
+        title: "Booking Error",
+        description: "There was an error processing your booking. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   // Advance to the next step if validation passes
@@ -239,7 +303,7 @@ export default function BookingPage() {
               </div>
               <h1 className="heading-lg mb-4">Booking Confirmed!</h1>
               <p className="body-lg text-salon-600 mb-6">
-                Thank you for booking with Elegance Hair Salon. We've sent a confirmation email with your appointment details.
+                Thank you for booking with Elegance Hair Salon. We've sent a confirmation email and WhatsApp message with your appointment details.
               </p>
               <div className="bg-salon-100 p-6 rounded-lg max-w-md mx-auto mb-8">
                 <div className="text-left">
@@ -417,9 +481,10 @@ export default function BookingPage() {
                                       className="flex p-4 rounded-md border border-salon-200 cursor-pointer hover:border-salon-400 peer-checked:border-salon-700 peer-checked:bg-salon-50 transition-all"
                                     >
                                       <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
-                                        <img 
+                                        <Image 
                                           src={stylist.image} 
                                           alt={stylist.name} 
+                                          fill
                                           className="object-cover h-full w-full"
                                         />
                                       </div>
@@ -640,9 +705,10 @@ export default function BookingPage() {
                               {getSelectedStylist() && (
                                 <div className="flex items-center">
                                   <div className="relative w-12 h-12 rounded-full overflow-hidden mr-3 flex-shrink-0">
-                                    <img 
+                                    <Image
                                       src={getSelectedStylist()?.image} 
                                       alt={getSelectedStylist()?.name} 
+                                      fill
                                       className="object-cover h-full w-full"
                                     />
                                   </div>
@@ -677,7 +743,7 @@ export default function BookingPage() {
                                 <div>{form.getValues("firstName")} {form.getValues("lastName")}</div>
                               </div>
                               <div>
-                                <div className="text-sm text-salon-600">Contact</div>
+                              <div className="text-sm text-salon-600">Contact</div>
                                 <div>{form.getValues("email")}</div>
                                 <div>{form.getValues("phone")}</div>
                               </div>
@@ -715,14 +781,21 @@ export default function BookingPage() {
                     ) : (
                       <div></div>
                     )}
-                    <Button
-                      type={step === 4 ? "submit" : "button"}
-                      onClick={step === 4 ? () => form.handleSubmit(onSubmit)() : handleNextStep}
+                    {step < 4 && <Button
+                      type={"button"}
+                      onClick={handleNextStep}
                       className="bg-salon-700 hover:bg-salon-800"
                     >
-                      {step === 4 ? "Confirm Booking" : "Continue"}
-                    </Button>
-                  </div>
+                      Continue
+                    </Button>}
+                    {step === 4 && <Button
+                      type={"submit"}
+                      onClick={() => form.handleSubmit(onSubmit)()}
+                      className="bg-salon-700 hover:bg-salon-800"
+                    >
+                      Confirm Booking
+                    </Button>}
+                  </div> 
                 </form>
               </Form>
             </CardContent>

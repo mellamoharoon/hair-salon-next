@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button'
 import { Scissors, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import MobileMenu from './mobile-menu'
+import Image from 'next/image'
+import logo from '@/assets/images/logo.jpeg'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -42,8 +44,9 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Scissors className="h-6 w-6 text-salon-700" />
-          <span className="text-xl font-serif font-medium text-salon-800">Neel David</span>
+          {/* <Scissors className="h-6 w-6 text-salon-700" /> */}
+          <Image src={logo} alt="Logo" width={32} height={32} />
+          <span className="text-xl font-serif font-medium text-salon-800">Neel David's Kishanganj</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

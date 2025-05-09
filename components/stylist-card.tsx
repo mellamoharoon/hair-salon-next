@@ -21,7 +21,7 @@ const StylistCard = ({ stylist }: StylistProps) => {
           src={stylist.image}
           alt={stylist.name}
           fill
-          className="object-cover"
+          // className="object-conatain"
         />
       </div>
       <CardContent className="p-6">

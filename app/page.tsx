@@ -7,6 +7,11 @@ import ServiceCard from "@/components/service-card";
 import StylistCard from "@/components/stylist-card";
 import TestimonialCard from "@/components/testimonial-card";
 import GalleryGrid from "@/components/gallery-grid";
+import nitinImage from '@/assets/images/stylists/nitin.jpeg'
+import kavitaImage from '@/assets/images/stylists/kavita.jpeg'
+import shahrukhImage from '@/assets/images/stylists/shahrukh.jpeg'
+
+
 
 export default function Home() {
   const featuredServices = [
@@ -15,16 +20,16 @@ export default function Home() {
       title: "Haircuts & Styling",
       description:
         "Expert cuts and styling for all hair types and preferences.",
-      price: "From $55",
+      price: "From ₹200",
       icon: <Scissors className="h-6 w-6 text-salon-700" />,
       image:
-        "https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
+      "https://images.pexels.com/photos/3993444/pexels-photo-3993444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
     {
       id: "coloring",
       title: "Hair Coloring",
       description: "Premium colors and techniques to transform your look.",
-      price: "From $85",
+      price: "From ₹100",
       icon: <Scissors className="h-6 w-6 text-salon-700" />,
       image:
         "https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -33,7 +38,7 @@ export default function Home() {
       id: "treatments",
       title: "Treatments & Masks",
       description: "Rejuvenating treatments to restore and nourish your hair.",
-      price: "From $45",
+      price: "From ₹2000",
       icon: <Scissors className="h-6 w-6 text-salon-700" />,
       image:
         "https://images.pexels.com/photos/3997381/pexels-photo-3997381.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -42,31 +47,27 @@ export default function Home() {
 
   const featuredStylists = [
     {
-      id: "emma",
-      name: "Emma Wilson",
-      role: "Senior Stylist",
-      bio: "Specializes in precision cuts and contemporary styling.",
-      image:
-        "https://images.pexels.com/photos/2681751/pexels-photo-2681751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      id: "nitin",
+      name: "Nitin",
+      role: "Master Hair Stylist",
+      bio: "Hair Treatments, Highlights, Colour correction",
+      image: nitinImage
     },
     {
-      id: "james",
-      name: "James Rodriguez",
-      role: "Color Specialist",
-      bio: "Expert in balayage, highlights, and creative color techniques.",
-      image:
-        "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      id: "kavita",
+      name: "Kavita",
+      role: "Beauty treatments",
+      bio: "Skincare, Makeup",
+      image: kavitaImage,
     },
     {
-      id: "sophia",
-      name: "Sophia Chen",
-      role: "Artistic Director",
-      bio: "Award-winning stylist specializing in avant-garde and editorial styles.",
-      image:
-        "https://images.pexels.com/photos/3785424/pexels-photo-3785424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      id: "shahrukh",
+      name: "Shahrukh",
+      role: "Senior Unisex Hair stylist",
+      bio: "Colour specialist, Balayage, Creative colour",
+      image: shahrukhImage,
     },
   ];
-
   const testimonials = [
     {
       id: "1",
@@ -124,8 +125,11 @@ export default function Home() {
 
         <div className="container relative z-10 pt-16">
           <div className="max-w-2xl text-white">
+            <h1 className="heading-lg mb-6 animated-fade-in">
+              Elevate Your Style at
+            </h1>
             <h1 className="heading-xl mb-6 animated-fade-in">
-              Elevate Your Style at Neel David
+            Neel David's Kishanganj
             </h1>
             <p className="body-lg mb-8 text-white/90 animated-fade-in-delay-1">
               Experience the art of premium hairstyling in a luxurious setting
@@ -142,9 +146,8 @@ export default function Home() {
               </Button>
               <Button
                 asChild
-                variant="outline"
                 size="lg"
-                className="text-white border-white/70 hover:bg-white/10"
+                className="bg-salon-700 hover:bg-salon-800 text-white"
               >
                 <Link href="/services">Explore Services</Link>
               </Button>
