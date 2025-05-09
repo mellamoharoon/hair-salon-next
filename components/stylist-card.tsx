@@ -13,7 +13,7 @@ interface StylistProps {
   }
 }
 
-const StylistCard = ({ stylist }: StylistProps) => {
+const StylistCard = ({ stylist }: any) => {
   return (
     <Card className="overflow-hidden border-0 subtle-shadow transition-all duration-300 hover:translate-y-[-5px]">
       <div className="relative h-72">

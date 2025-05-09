@@ -706,8 +706,8 @@ export default function BookingPage() {
                                 <div className="flex items-center">
                                   <div className="relative w-12 h-12 rounded-full overflow-hidden mr-3 flex-shrink-0">
                                     <Image
-                                      src={getSelectedStylist()?.image} 
-                                      alt={getSelectedStylist()?.name} 
+                                      src={getSelectedStylist()?.image ?? ''} 
+                                      alt={getSelectedStylist()?.name ?? ''} 
                                       fill
                                       className="object-cover h-full w-full"
                                     />
